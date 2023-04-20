@@ -209,17 +209,17 @@ for (let i = min; i <= max; i++) {
   }
 }
 
-let userName = prompt(`userName`);
-if (userName === 'бандерівець') {
-  let password = prompt('гасло');
+// let userName = prompt(`userName`);
+// if (userName === 'бандерівець') {
+//   let password = prompt('гасло');
 
-  if (password === `Слава Україні`) {
-    console.log('Героям слава');
-  } else {
-    console.log('Вийди розбійник');
-  }
-} else if (!userName) {
-  console.log(`скасовано`);
-} else {
-  console.log(`Ви хто такі, я вас не кликав`);
-}
+//   if (password === `Слава Україні`) {
+//     console.log('Героям слава');
+//   } else {
+//     console.log('Вийди розбійник');
+//   }
+// } else if (!userName) {
+//   console.log(`скасовано`);
+// } else {
+//   console.log(`Ви хто такі, я вас не кликав`);
+// }
