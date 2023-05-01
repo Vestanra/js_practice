@@ -150,3 +150,4 @@ function updateCourse(oldName, newName) {
 
 updateCourse('gg', 'aa');
 console.log('update', courses);
+console.log(courses);
