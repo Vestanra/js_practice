@@ -211,8 +211,6 @@ const x = {
 };
 console.log(Object.keys(x).length);
 
-
-
 // const apartment = {
 //     descr: "Spacious apartment in the city center",
 //     rating: 4,
@@ -225,3 +223,4 @@ console.log(Object.keys(x).length);
 //     values.push(apartment[key]);
 //   };
 //   console.log(values);
+
