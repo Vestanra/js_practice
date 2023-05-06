@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 // const numbers = [1,2,3].concat([4,5,6], [7,8,9]);
 // console.log(numbers);
 
@@ -69,13 +69,70 @@ console.log(finalSettings);
 
 
 //дестуктуризація
-const playlist = {
-    name: 'мій плейліст',
-    rating: 5,
-    tracks: ['трек-1', 'трек-2','трек-3'],
-    tracksCount: 3, 
+// const playlist = {
+//     name: 'мій плейліст',
+//     rating: 5,
+//     tracks: ['трек-1', 'трек-2','трек-3'],
+//     tracksCount: 3, 
+// };
+
+// console.log(playlist.name, playlist.rating, playlist.tracks, playlist.tracksCount);
+// const { rating, name, tracksCount: numberOfTracks, tracks, author = 'tom'} = playlist;
+// console.log(rating);
+
+// tracks.push('lalala');
+// console.log('playlist after change', playlist.tracks);
+// console.log(numberOfTracks);
+
+const profile = {
+  name: 'Tom Geer',
+  tag: 'gluk',
+  location: 'Ocho Rios, Jamaica',
+  avatar: 'https://fastly.picsum.photos/id/553/200/300.jpg?hmac=-A3VLW_dBmwUaXOe7bHhCt-lnmROrPFyTLslwNHVH1A',
+  stats: {
+    followers: 5603,
+    views: 4287,
+    likes: 542,
+  },
 };
 
-console.log(playlist.name, playlist.rating, playlist.tracks, playlist.tracksCount);
-const { rating, name, tracksCount} = playlist;
-console.log(rating, tracksCount, name);
+// const { name, tag, avatar, stats, stats: { followers, views, likes }, } = profile; //глубока дестуктуризація
+// // const { followers, views, likes } = stats;  
+// console.log(tag, name, stats, followers);
+
+//...rest
+const { name, tag, location, ...restProfail } = profile;
+console.log('restProfail', restProfail);
+
+
+//деструктуризація масиву    !!!! лише по порядку
+const rgb = [255, 169, 122];
+const [aa, bb, cc, dd = 100] = rgb;
+console.log(dd)
+
+// знайти найбільше число
+const authors = {
+  kiwi: 4,
+  poly: 5,
+  ajax: 8,
+  mango: 7,  
+}
+const entries = Object.entries(authors);
+console.log(entries);
+
+// for (const entry of entries) {
+//   const [name, rating] = entry;
+//   console.log(name, rating);
+// }
+
+
+
+// const ratings = Object.values(authors);
+// console.log(Math.max(...ratings));
+
+
+//патерн
+function showProfileInfo(userProfile) {
+  console.log(userProfile);
+}
+showProfileInfo(profile);
