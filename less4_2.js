@@ -69,83 +69,50 @@ const playerFind2 = (allPlayers, playersName) => {
 };
 console.log(playerFind2(players, 'lemon'));
 
-const aaa =
-    [
-        {
-            name: "Moore Hensley",
-            email: "moorehensley@indexia.com",
-            eyeColor: "blue",
-            friends: ["Sharron Pace"],
-            isActive: false,
-            balance: 2811,
-            gender: "male",
-            age: 37
-        },
-        {
-            name: "Sharlene Bush",
-            email: "sharlenebush@tubesys.com",
-            eyeColor: "blue",
-            friends: ["Briana Decker", "Sharron Pace"],
-            isActive: true,
-            balance: 3821,
-            gender: "female",
-            age: 34
-        },
-        {
-            name: "Ross Vazquez",
-            email: "rossvazquez@xinware.com",
-            eyeColor: "green",
-            friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
-            isActive: false,
-            balance: 3793,
-            gender: "male",
-            age: 24
-        },
-        {
-            name: "Elma Head",
-            email: "elmahead@omatom.com",
-            eyeColor: "green",
-            friends: ["Goldie Gentry", "Aisha Tran"],
-            isActive: true,
-            balance: 2278,
-            gender: "female",
-            age: 21
-        },
-        {
-            name: "Carey Barr",
-            email: "careybarr@nurali.com",
-            eyeColor: "blue",
-            friends: ["Jordan Sampson", "Eddie Strong"],
-            isActive: true,
-            balance: 3951,
-            gender: "male",
-            age: 27
-        },
-        {
-            name: "Blackburn Dotson",
-            email: "blackburndotson@furnigeer.com",
-            eyeColor: "brown",
-            friends: ["Jacklyn Lucas", "Linda Chapman"],
-            isActive: false,
-            balance: 1498,
-            gender: "male",
-            age: 38
-        },
-        {
-            name: "Sheree Anthony",
-            email: "shereeanthony@kog.com",
-            eyeColor: "brown",
-            friends: ["Goldie Gentry", "Briana Decker"],
-            isActive: true,
-            balance: 2764,
-            gender: "female",
-            age: 39
-        }
-    ];
-const getUsersWithFriend = (users, friendName) => {
-    return users.filter((elemet) => elemet.friends.includes(friendName))
-    
+const numbers2 = [5, 10, 15, 20, 25];
 
+const total = numbers2.reduce((acc, number) => acc + number)
+console.log('total umbers2:', total);
 
+const salary = {
+    mango: 100,
+    poly: 50,
+    ajax: 150,
 };
-console.log(getUsersWithFriend(aaa, 'Briana Decker'));   
+
+const totalSalary = Object.values(salary).reduce(
+    (acc, value) => acc + value, 
+    0,
+    );
+console.log('totalSalary - ', totalSalary);
+
+const totalPriceReduce = players.reduce(
+    (total, {price}) => total + price,
+    0,
+    );
+
+console.log('totalPriceReduce', totalPriceReduce);
+
+
+const tweets = [
+    { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+    { id: '001', likes: 2, tags: ['html', 'css'] },
+    { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+    { id: '003', likes: 8, tags: ['css', 'react'] },
+    { id: '004', likes: 0, tags: ['js', 'nodejs', 'react'] },
+];
+
+const allTweets = tweets.flatMap(elemet => elemet.tags);
+console.log('tweets.flatMap', allTweets);
+
+const allTweets1 = tweets.map(elemet => elemet.tags);
+console.log('tweets.map', allTweets1);
+
+const allTweets2 = tweets.reduce((allTweets2, tweet) => {
+  allTweets2.push(tweet.tags);
+  return allTweets2;
+}, []);
+console.log('tweets.reduce', allTweets2);
+
+const allTweets22 = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);//спочатку старий акумулятор
+console.log('tweets.reduce, ...rest', allTweets22);
