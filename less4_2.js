@@ -108,11 +108,51 @@ console.log('tweets.flatMap', allTweets);
 const allTweets1 = tweets.map(elemet => elemet.tags);
 console.log('tweets.map', allTweets1);
 
-const allTweets2 = tweets.reduce((allTweets2, tweet) => {
-  allTweets2.push(tweet.tags);
-  return allTweets2;
+const allTweets2 = tweets.reduce((all, tweet) => {
+  all.push(tweet.tags);
+  return all;
 }, []);
 console.log('tweets.reduce', allTweets2);
 
 const allTweets22 = tweets.reduce((acc, tweet) => [...acc, ...tweet.tags], []);//спочатку старий акумулятор
 console.log('tweets.reduce, ...rest', allTweets22);
+
+const tagStat = allTweets.reduce((acc, tag) => {
+    // console.log(acc);
+    // if (acc[tag]) {
+    //     return {
+    //         ...acc,
+    //         [tag]: acc.tag + 1,
+    //     };
+    // };
+    // return {
+    //     ...acc,
+    //     [tag]: 1,
+    // };
+
+    return {
+        ...acc,
+        [tag]: acc[tag] ? acc[tag] + 1 : 1,
+    }
+}, {});
+console.log('tagStat', tagStat);
+
+const playerss = [
+  { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+  { name: "Poly", playtime: 469, gamesPlayed: 2 },
+  { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+  { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+];
+// Change code below this line
+const averagePlaytimePerGame = playerss.reduce((acc, { playtime, gamesPlayed }) =>
+    [...acc, playtime / gamesPlayed], []);
+console.log(averagePlaytimePerGame);
+
+const totalAveragePlaytimePerGame = averagePlaytimePerGame.reduce((total, player) =>
+    total + player, 0);
+console.log(totalAveragePlaytimePerGame);
+
+// tweets.reduce((allTweets2, tweet) => {
+//   allTweets2.push(tweet.tags);
+//   return allTweets2;
+// }, []);
