@@ -156,3 +156,14 @@ console.log(totalAveragePlaytimePerGame);
 //   allTweets2.push(tweet.tags);
 //   return allTweets2;
 // }, []);
+
+
+///....sort
+const numbers11 = [1, 9, 5, 11, 4, 3];
+const descSortedNumbers = [...numbers11].sort((a, b) => b - a);
+const ascSortedNumbers = [...numbers11].sort((a, b) => a - b);
+
+console.log('ascSortedNumbers', ascSortedNumbers);
+console.log('descSortedNumbers', descSortedNumbers);
+console.log(players.sort((a, b) => b.online - a.online));
+console.log('5=9'.charCodeAt(3))
