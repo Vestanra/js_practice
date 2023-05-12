@@ -166,4 +166,4 @@ const ascSortedNumbers = [...numbers11].sort((a, b) => a - b);
 console.log('ascSortedNumbers', ascSortedNumbers);
 console.log('descSortedNumbers', descSortedNumbers);
 console.log(players.sort((a, b) => b.online - a.online));
-console.log('5=9'.charCodeAt(3))
+console.log('5=9'.charCodeAt(1))
