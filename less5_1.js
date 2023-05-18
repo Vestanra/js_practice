@@ -47,3 +47,16 @@ objB.a = 13;
 console.log(objA);
 console.log(objB.a);
 console.log(objA.hasOwnProperty('z'));
+
+const Car = function ({brand, modale, price} = {}) {
+    // const {brand, modale, price} = config;
+    this.brand = brand;
+    this.modale = modale;
+    this.price = price;
+};
+const myCar1 = new Car ({brand: 'Audi', modale: 'Q3', price: 20000, });
+console.log('myCar1', myCar1);
+const myCar2 = new Car ({brand: 'BMW', modale: 'X5', price: 18000, });
+console.log('myCar2', myCar2);
+const myCar3 = new Car ();
+console.log('myCar3', myCar3);
